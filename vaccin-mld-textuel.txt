@@ -1,0 +1,16 @@
+specialite = (code_specialite INT, description VARCHAR(50));
+Ecole = (id_ecole DECIMAL(15,2), nom VARCHAR(50), adresse VARCHAR(100), cp VARCHAR(8), ville VARCHAR(50), nombre_eleves INT);
+enfant = (nom VARCHAR(50), prenom VARCHAR(50), dateNaissance DATE, sex VARCHAR(1));
+Departement = (nom_departement VARCHAR(50));
+Taille = (id_taille INT, taille INT, date_taille DATE);
+poids = (id_poids INT, date_poids VARCHAR(50), poids DOUBLE);
+CategorieVaccin = (nom VARCHAR(50), description VARCHAR(50));
+centre_medical = (id_ecole INT, nom VARCHAR(50), adresse VARCHAR(100), cp VARCHAR(8), ville VARCHAR(50), #nom_departement);
+vaccin = (code INT, decsription VARCHAR(50), #nom);
+Medecin = (numero CHAR(5), nom VARCHAR(50), prenom VARCHAR(50), #id_ecole*);
+vacination = (#numero, #code, #(nom, prenom), date_vaccination DATE);
+tab_specialite_medecin = (#numero, #code_specialite);
+tab_ecole_medecin = (#numero, #id_ecole);
+tab_ecole_enfant = (#id_ecole, #(nom, prenom), annee INT);
+tab_enfant_taille = (#(nom, prenom), #id_taille);
+tabe_enfant_poids = (#(nom, prenom), #id_poids);
